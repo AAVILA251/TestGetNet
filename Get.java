@@ -18,5 +18,11 @@ public class Get {
 		System.out.println("Status Code: " + response.getStatusCode());
 		
 	}
+	@Test
+	public void body(String texto, ResponseBodyData response) {
+
+		String bodyResponse = response.asString();
+		assertThat(bodyResponse, StringContains.containsString(texto));
+		System.out.println(response.asString());
 
 }
