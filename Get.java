@@ -18,5 +18,14 @@ public class Get {
 		System.out.println("Status Code: " + response.getStatusCode());
 		
 	}
+	
+	@Test
+	public void bodyResponse() {
+    	
+    	Response response = RestAssured.get("https://reqres.in/api/%20-%20Documenta%C3%A7%C3%A3o");
+    	String asPrettyString = response.asPrettyString();
+		assertTrue(asPrettyString, true);
+		System.out.println(response.asPrettyString());
 
+	}
 }
